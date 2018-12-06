@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Image, StyleSheet } from 'react-native';
 import { Card, CardItem, Body, Text, Right, Icon } from 'native-base';
 
-export default ListTrending = (props) => (
+export default ListTrendingGlobal = (props) => (
   <Card transparent style={styles.card}>
     <CardItem cardBody>
       <Image source={{uri: props.data.image}} style={styles.image} />
