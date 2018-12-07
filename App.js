@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-import {TouchableOpacity,StyleSheet} from 'react-native';
+import {TouchableOpacity,StyleSheet, Image} from 'react-native';
 import {Icon, Title, Row, Col, Item, Input, Thumbnail} from 'native-base';
 import {createBottomTabNavigator,createStackNavigator,createAppContainer} from 'react-navigation';
 
@@ -28,11 +28,8 @@ const HomeSearch = createStackNavigator(
       screen: HomeScreen,
       navigationOptions: ({navigation}) => {
         return {     
-          headerTitle: (
-            <Title style={styles.title}>YouTube</Title>
-          ),
           headerLeft: (
-            <Icon name='logo-youtube' style={styles.logo} />
+            <Image style={styles.image} source={require('./logo/youtube.png')} />
           ),
           headerRight: (
             <Row style={{width: 140}}>
@@ -80,11 +77,8 @@ const TrendingSearch = createStackNavigator(
       screen: TrendingScreen,
       navigationOptions: ({navigation}) => {
         return {     
-          headerTitle: (
-            <Title style={styles.title}>YouTube</Title>
-          ),
           headerLeft: (
-            <Icon name='logo-youtube' style={styles.logo} />
+            <Image style={styles.image} source={require('./logo/youtube.png')} />
           ),
           headerRight: (
             <Row style={{width: 140}}>
@@ -132,11 +126,8 @@ const SubscriptionsSearch = createStackNavigator(
       screen: SubscriptionsScreen,
       navigationOptions: ({navigation}) => {
         return {     
-          headerTitle: (
-            <Title style={styles.title}>YouTube</Title>
-          ),
           headerLeft: (
-            <Icon name='logo-youtube' style={styles.logo} />
+            <Image style={styles.image} source={require('./logo/youtube.png')} />
           ),
           headerRight: (
             <Row style={{width: 140}}>
@@ -183,12 +174,9 @@ const InboxSearch = createStackNavigator(
     Beranda: {
       screen: InboxScreen,
       navigationOptions: ({navigation}) => {
-        return {     
-          headerTitle: (
-            <Title style={styles.title}>YouTube</Title>
-          ),
+        return {
           headerLeft: (
-            <Icon name='logo-youtube' style={styles.logo} />
+            <Image style={styles.image} source={require('./logo/youtube.png')} />
           ),
           headerRight: (
             <Row style={{width: 140}}>
@@ -237,11 +225,8 @@ const LibrarySearch = createStackNavigator(
       screen: LibraryScreen,
       navigationOptions: ({navigation}) => {
         return {     
-          headerTitle: (
-            <Title style={styles.title}>YouTube</Title>
-          ),
           headerLeft: (
-            <Icon name='logo-youtube' style={styles.logo} />
+            <Image style={styles.image} source={require('./logo/youtube.png')} />
           ),
           headerRight: (
             <Row style={{width: 140}}>
@@ -323,18 +308,6 @@ const ScreenTab = createBottomTabNavigator(
 );
 
 const styles = StyleSheet.create({
-  title: {
-    color: 'black',
-    fontSize:35,
-    marginBottom:3,
-    marginLeft:-15,
-    fontFamily:'Times New Roman'
-  },
-  logo: {
-    fontSize:30,
-    color:'red',
-    marginLeft: 8
-  },
   icon: {
     fontSize:20,
     textAlign: 'center',
@@ -352,7 +325,12 @@ const styles = StyleSheet.create({
     flex:0.98,
     paddingLeft:5,
     borderBottomColor:'white'
-  }
+  },
+  image: {
+    width:90,
+    height:20,
+    marginLeft:17
+  },
 });
 
 export default createAppContainer(ScreenTab);
