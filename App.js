@@ -206,7 +206,8 @@ const InboxSearch = createStackNavigator(
             </Row>
           ),
           headerStyle: {
-            height: 47
+            height: 47,
+            elevation: 0
           },
         }
       }

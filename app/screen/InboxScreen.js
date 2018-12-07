@@ -1,16 +1,36 @@
 import React,{Component} from 'react';
-import { Container, Content, Text } from 'native-base';
+import {createMaterialTopTabNavigator, createAppContainer} from 'react-navigation';
 
-export default class InboxScreen extends Component {
+import MessageScreen from './MessageScreen';
+import NotificationScreen from './NotificationScreen';
+class InboxScreen extends Component {
 
   render(){
     return(
-      <Container>
-        <Content>
-          <Text>InboxScreen</Text>
-        </Content>
-      </Container>
+      <Screen />
     )
   }
 
 }
+
+const Screen = createMaterialTopTabNavigator(
+  {
+    Messages: MessageScreen,
+    Notifications: NotificationScreen
+  },
+  {
+    tabBarOptions: {
+      labelStyle: {
+        color: 'black'
+      },
+      style: {
+        backgroundColor: 'white'
+      },
+      indicatorStyle: {
+        backgroundColor: 'black'
+      }
+    },
+  }
+);
+
+export default createAppContainer(Screen);
